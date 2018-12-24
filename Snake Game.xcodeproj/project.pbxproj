@@ -15,6 +15,7 @@
 		E98F626921D15A8200A060A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98F626721D15A8200A060A7 /* Main.storyboard */; };
 		E98F626B21D15A8400A060A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E98F626A21D15A8400A060A7 /* Assets.xcassets */; };
 		E98F626E21D15A8400A060A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98F626C21D15A8400A060A7 /* LaunchScreen.storyboard */; };
+		E98F627821D163F300A060A7 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F627721D163F300A060A7 /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E98F626A21D15A8400A060A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E98F626D21D15A8400A060A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E98F626F21D15A8400A060A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98F627721D163F300A060A7 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E98F626A21D15A8400A060A7 /* Assets.xcassets */,
 				E98F626C21D15A8400A060A7 /* LaunchScreen.storyboard */,
 				E98F626F21D15A8400A060A7 /* Info.plist */,
+				E98F627721D163F300A060A7 /* GameManager.swift */,
 			);
 			path = "Snake Game";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98F626421D15A8200A060A7 /* GameScene.swift in Sources */,
+				E98F627821D163F300A060A7 /* GameManager.swift in Sources */,
 				E98F626621D15A8200A060A7 /* GameViewController.swift in Sources */,
 				E98F625E21D15A8200A060A7 /* AppDelegate.swift in Sources */,
 			);
