@@ -34,10 +34,47 @@ class GameScene: SKScene {
         initializeMenu()
         
         //Step 2.2 initialize gameManager
-        game = GameManager()
+        game = GameManager(scene: self) //Step 4.1 - parameters 
         
         //Step 3.2
         initializeGameView()
+        
+        //Step 7.1 - Controlling the movement of the Snake using swipe gestures
+        //1
+        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeR))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeL))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        let swipeUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeU))
+        swipeUp.direction = .up
+        view.addGestureRecognizer(swipeUp)
+        let swipeDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeD))
+        swipeDown.direction = .down
+        view.addGestureRecognizer(swipeDown)
+    }
+    
+    //Step 7.2 - Create functions that are called when the user enters a swipe gesture. The “@objc” before the function creates an objective-c function, this is necessary in order to be called via the #selector in the original UISwipeGestureRecognizer.
+    @objc func swipeR()
+    {
+        //print("r")
+        game.swipe(ID: 3)
+    }
+    @objc func swipeL()
+    {
+        //print("l")
+        game.swipe(ID: 1)
+    }
+    @objc func swipeU()
+    {
+        //print("u")
+        game.swipe(ID: 2)
+    }
+    @objc func swipeD()
+    {
+        //print("d")
+        game.swipe(ID: 4)
     }
     
     //3
@@ -127,6 +164,8 @@ class GameScene: SKScene {
             self.currentScore.isHidden = false
             self.gameBG.run(SKAction.scale(to: 1, duration: 0.4))
             self.currentScore.run(SKAction.scale(to: 1, duration: 0.4))
+            //Step 4.2 - 
+            self.game.initGame()
         }
     }
     
@@ -221,9 +260,10 @@ class GameScene: SKScene {
         //for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
     
-    
+    //Step 5.1 - Move the Player. In the rendering loop, the update function is called once per second. This means if your app runs at 60 fps the function is called 60 times a second
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        game.update(time: currentTime)
     }
     
     
